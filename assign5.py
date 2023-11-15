@@ -1,13 +1,28 @@
 import json
 
-a= open("emploee.jason.txt", "r") 
+a= open("emploee.json", "r") 
 b= a.read()
 data = json.loads(b)
+some={}
 for employee in data['employees']:
     if employee [ "middleName"] == None:
-           print(f"{ employee['id']}.{ employee['firstName']}{ employee['lastName']}@gmail.com") 
+           email=(f"{ employee['firstName']}{ employee['lastName']}@gmail.com") 
+           name=(f"{ employee['firstName']}{ employee['lastName']}") 
     else : 
-        print(f"{employee['id']}.{ employee['firstName']}{ employee['middleName']}{ employee['lastName']}@gmail.com")
+        email=(f"{ employee['firstName']}{ employee['middleName']}{ employee['lastName']}@gmail.com")
+        name=(f"{ employee['firstName']}{ employee['middleName']}{ employee['lastName']}")
+    some[email]={"id":employee["id"],  "fullname":name} 
+print(some)
+
+#for i in data['employees']:
+    #if employee ["middleName"]==None:
+          #l=(f"{employee['id']}{ employee['firstName']}{ employee['lastName']}")
+   # else:
+   #       l=(f"{ employee['firstName']}{ employee['middleName']}{ employee['lastName']}")
+   # some[l]=email
+#print(some)
         
-    details = json.dumps( employee, indent=(3))
-    print(details)
+#details = json.dumps( employee, )
+#some[details]=details
+        
+#print(some)
