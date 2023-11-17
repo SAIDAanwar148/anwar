@@ -11,8 +11,10 @@ for employee in data['employees']:
     else : 
         email=(f"{ employee['firstName']}{ employee['middleName']}{ employee['lastName']}@gmail.com")
         name=(f"{ employee['firstName']}{ employee['middleName']}{ employee['lastName']}")
-    some[email]={"id":employee["id"],  "fullname":name} 
-work=json.dumps(some)
+    some[email]={"id":employee["id"],  "fullname":name ,} 
+g=open("output.json","w")
+work=json.dumps(some, indent=3)
+k=g.write(work)
 print(work)
 
 #for i in data['employees']:
