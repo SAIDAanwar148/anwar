@@ -12,7 +12,8 @@ for employee in data['employees']:
         email=(f"{ employee['firstName']}{ employee['middleName']}{ employee['lastName']}@gmail.com")
         name=(f"{ employee['firstName']}{ employee['middleName']}{ employee['lastName']}")
     some[email]={"id":employee["id"],  "fullname":name} 
-print(some)
+work=json.dumps(some)
+print(work)
 
 #for i in data['employees']:
     #if employee ["middleName"]==None:
